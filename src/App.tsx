@@ -1,13 +1,10 @@
-import './App.css'
+import { Chat } from './components/Chat'
 
 function App() {
-
   return (
-    <>
-      <h1>AI AgentApplication</h1>
-      <div className="card">
-      </div>
-    </>
+    <div className="min-h-screen bg-slate-50 p-4">
+      <Chat />
+    </div>
   )
 }
 
