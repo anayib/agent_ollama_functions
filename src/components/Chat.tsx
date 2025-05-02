@@ -4,10 +4,10 @@ import * as React from 'react'
 import { Send } from 'lucide-react'
 import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
 
-import { Card, CardContent, CardFooter } from './ui/Card'
-import { Button } from './ui/Button'
-import { Input } from './ui/Input'
-import { Message } from './ui/Message'
+import { Card, CardContent, CardFooter } from './ui/card'
+import { Button } from './ui/button'
+import { Input } from './ui/input'
+import { Message } from './ui/message'
 
 interface ChatMessage {
   role: 'assistant' | 'user'
@@ -50,24 +50,32 @@ export function Chat() {
   }, [messages])
 
   return (
-    <Card className="w-full max-w-2xl mx-auto h-[600px] flex flex-col overflow-hidden">
-      <CardContent className="flex-1 overflow-hidden p-0">
+    <Card className="w-full max-w-2xl mx-auto h-[800px] flex flex-col overflow-hidden">
+      <CardContent className="flex-1 overflow-hidden p-8 bg-slate-50 dark:bg-slate-900">
         <ScrollAreaPrimitive.Root className="h-full">
           <ScrollAreaPrimitive.Viewport ref={scrollViewportRef} className="h-full w-full">
             <div className="flex flex-col space-y-4 p-4">
-              {messages.map((message, index) => (
-                <Message
-                  key={index}
-                  role={message.role}
-                  content={message.content}
-                />
-              ))}
+              {messages.length === 0 ? (
+                <div className="flex items-center justify-center h-full">
+                  <div className="text-center p-6 rounded-lg">
+                    <p className="text-3xl font-medium dark:text-slate-400">How can I help you today?</p>
+                  </div>
+                </div>
+              ) : (
+                messages.map((message, index) => (
+                  <Message
+                    key={index}
+                    role={message.role}
+                    content={message.content}
+                  />
+                ))
+              )}
             </div>
           </ScrollAreaPrimitive.Viewport>
           <ScrollAreaPrimitive.Scrollbar orientation="vertical" />
         </ScrollAreaPrimitive.Root>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-4 pt-4">
         <div className="flex w-full space-x-2">
           <Input
             placeholder="Type a message..."
