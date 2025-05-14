@@ -16,7 +16,7 @@ const toolNode = new ToolNode(tools);
 // Create a model and give it access to the tools
 const model = new ChatOllama({
   baseUrl: process.env.OLLAMA_HOST || "http://localhost:11434",
-  model: "llama3.2",
+  model: process.env.OLLAMA_MODEL_NAME || "qwen3",
   temperature: 0.4,
   streaming: true, // Enable streaming
 }).bindTools(tools);
