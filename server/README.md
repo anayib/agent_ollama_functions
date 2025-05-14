@@ -1,4 +1,4 @@
-# AI Agent with LanGraph
+# AI Agent with LangGraph
 
 ## Overview
 This project is a collection of two AI agents built using LangGraph, the LangChain framework for building AI agents. The agents are designed to interact with a user and perform tasks based on the provided instructions. The examples are limited to predefined custom tools, but it can be easily extended to handle more complex scenarios by adding your own tools to `./server/tools.ts` file.
