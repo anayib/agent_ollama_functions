@@ -5,7 +5,6 @@ It provides a UI to chat with the Agent.
 
 # Stack
 - React
-- OpenAI
 - Node.js
 - TypeScript
 - Vite

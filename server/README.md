@@ -18,7 +18,6 @@ The porpuse of this project is to show-case how to build AI agents that interact
 - Node.js
 - TypeScript
 - Express (as web server)
-- Redis to track chat history (cache data base)
 - Ollama as LLM local server
 - Llama 3.2 as LLM to run locally
 - LangGraph (AI Framework to build agents from Langchain)
