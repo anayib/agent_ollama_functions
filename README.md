@@ -22,7 +22,7 @@ Checkout the `./server/README.md`  and `./client/README.md` for more details on 
 - Express (as web server)
 - Ollama as LLM local server
 - Llama 3.2 as LLM to run locally
-- LangChain (AI Framework to build agents from Langgraph)
+- LangGraph (AI Framework to build agents from LangChain)
 
 ## Client Stack
 - React
